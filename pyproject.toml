@@ -1,0 +1,22 @@
+[project]
+name = "aoc26"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Koen Baak",email = "koen.baak@mn.nl"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy (>=2.3.5,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ipython (>=9.7.0,<10.0.0)"
+]

@@ -1,5 +1,4 @@
 from pathlib import Path
-
 import numpy as np
 
 
@@ -7,6 +6,7 @@ def read_rotations() -> np.ndarray:
     lines = Path("data/data1.txt").read_text().split("\n")
     x = np.char.array(lines).replace("R", "").replace("L", "-")
     return np.array(x).astype(np.int64)
+
 
 def left_at_zero(x: np.ndarray) -> int:
     return ((50 + x.cumsum()) % 100 == 0).sum()

@@ -27,23 +27,8 @@ def sol1():
     return n_splits
 
 
-def sol2():
-    m = read()
-    old_timelines = [[np.argmax(m[0] == "S").item()]]
-    new_timelines = []
-    for row in m[1:]:
-        for timeline in old_timelines:
-            idx = timeline[-1]
-            if row[idx] != "^":
-                new_timelines.append(timeline + [idx])
-            else:
-                new_timelines.append(timeline + [idx - 1])
-                new_timelines.append(timeline + [idx + 1])
-        old_timelines = new_timelines
-        new_timelines = []
-    return len(old_timelines)
 
-def sol3():
+def sol2():
     m = read()
     old_positions = {np.argmax(m[0] == "S").item(): 1}
     new_positions = defaultdict(int)
@@ -54,8 +39,8 @@ def sol3():
                 new_positions[idx] += count
             else:
                 n_timelines += count
-                new_positions[idx-1] += count
-                new_positions[idx+1] += count
+                new_positions[idx - 1] += count
+                new_positions[idx + 1] += count
         old_positions = new_positions
         new_positions = defaultdict(int)
 

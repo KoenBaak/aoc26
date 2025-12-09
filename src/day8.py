@@ -46,6 +46,7 @@ def sol1():
     circuits = sorted(list(circuits.values()), key=lambda c: len(c), reverse=True)
     return functools.reduce(operator.mul, [len(c) for c in circuits[:3] if len(c) > 0])
 
+
 def sol2():
     coords = read()
     d = pairwise_distances(coords)

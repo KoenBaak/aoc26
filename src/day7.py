@@ -27,7 +27,6 @@ def sol1():
     return n_splits
 
 
-
 def sol2():
     m = read()
     old_positions = {np.argmax(m[0] == "S").item(): 1}
